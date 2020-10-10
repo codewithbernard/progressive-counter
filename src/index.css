@@ -24,6 +24,28 @@ body {
   place-items: center;
 }
 
+#plus, #minus {
+  position: fixed;
+  font-size: 120px;
+  color: white;
+  opacity: 0.35;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: fit-content;
+  user-select: none;
+  cursor: pointer;
+}
+
+#minus {
+  left: 5%;
+}
+
+#plus {
+  right: 5%;
+}
+
 #counter {
   display: flex;
   flex-direction: column;
@@ -36,6 +58,7 @@ body {
   font-size: 240px;
   color: white;
   user-select: none;
+  opacity: 0.9;
 }
 
 #counter span {
