@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Capriola&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Capriola', sans-serif;
+}
+
+body {
+  background: #232526;
+  background: -webkit-linear-gradient(to right, #414345, #232526);
+  background: linear-gradient(to right, #414345, #232526);
+}
+
+#root {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+#counter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#counter h2 {
+  margin: 0;
+  font-size: 120px;
+  color: white;
+}
+
+#counter span {
+  cursor: pointer;
+  font-size: 80px;
+  user-select: none;
+}
