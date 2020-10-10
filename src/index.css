@@ -16,6 +16,10 @@ body {
 
 #root {
   height: 100%;
+}
+
+#container {
+  height: 100%;
   display: grid;
   place-items: center;
 }
@@ -29,7 +33,7 @@ body {
 
 #counter h2 {
   margin: 0;
-  font-size: 120px;
+  font-size: 240px;
   color: white;
   user-select: none;
 }
