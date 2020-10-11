@@ -3,6 +3,7 @@ import { useSpring, animated } from "react-spring";
 
 const App = () => {
   const [count, setCount] = useState(0);
+  const [toggleKey, setToggleKey] = useState({ plus: 1, minus: 1 });
   const [{ xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0] }));
   const interpolateCount = xy.interpolate(
     (x, y) =>
@@ -22,13 +23,19 @@ const App = () => {
   const handleClick = ({ clientX }) => {
     if (clientX - window.innerWidth / 2 > 0) {
       setCount(count + 1);
+      setToggleKey({ plus: toggleKey.plus + 1, minus: toggleKey.minus });
     } else {
       count && setCount(count - 1);
+      setToggleKey({ plus: toggleKey.plus, minus: toggleKey.minus - 1 });
     }
   };
 
   const handleKeyDown = () => {
     setCount((count) => count + 1);
+    setToggleKey((toggleKey) => ({
+      plus: toggleKey.plus + 1,
+      minus: toggleKey.minus,
+    }));
   };
 
   // Listen for any click or key
@@ -48,8 +55,12 @@ const App = () => {
       onScroll={onScroll}
       onClick={handleClick}
     >
-      <span id="plus">+</span>
-      <span id="minus">-</span>
+      <span key={`plus-${toggleKey.plus}`} id="plus" className="animated">
+        +
+      </span>
+      <span key={`minus-${toggleKey.minus}`} id="minus" className="animated">
+        -
+      </span>
       <div id="counter">
         <animated.h2 style={{ transform: interpolateCount }}>
           {count}

@@ -37,6 +37,7 @@ body {
   height: fit-content;
   user-select: none;
   cursor: pointer;
+  animation: .5s scale-up;
 }
 
 #minus {
@@ -60,6 +61,7 @@ body {
   color: white;
   user-select: none;
   opacity: 0.9;
+  animation: 2s fade-in ease-in;
 }
 
 #counter span {
@@ -76,5 +78,26 @@ body {
   #plus,
   #minus {
     font-size: 120px;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
+
+@keyframes scale-up {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
   }
 }
